@@ -1,0 +1,18 @@
+<main>
+    
+    <h2>Register</h2>
+    <?php 
+    if(isset($error)){
+        echo '<div class="formSubErrors"><p>Uh oh! Gotta fix something</p><ul><li>'.$error.'</li></ul></div>';
+    }
+    ?>
+    <form method="POST" action="index.php" name="reg">
+        <input type="hidden" name="task" value="register">
+        <input type="number" name="zip" placeholder="Zip Code" id="zipInput" min="1001" max="99950">
+        <input type="email" placeholder="eMail Address" name="email" id="emailInput">        
+        <input type="password" placeholder="Password" name="password" id="pwInput">
+        <label for="password">8+ characters long, at least 1 uppercase letter, number or symbol</label>
+        <input type="password" placeholder="Confirm Password" name="confPassword" id="confPwInput"> 
+        <input type="submit" value="Register">
+    </form>
+</main>

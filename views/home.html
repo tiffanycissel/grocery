@@ -1,0 +1,20 @@
+<main id="home">
+    <img src="assets\shopping-29647_320.png" alt="shopping-cart">
+    <a href="?page=search" role="button">Search</a>
+    <?php
+    if(!isset($_SESSION['userID'])){
+        echo '<a href="?page=signin" role="button">Sign In</a>
+    <a href="?page=register" role="button">Register</a>';
+    } else {
+        echo '
+        <form method="POST" action="./index.php">
+            <input type="hidden" name="task" value="profile">
+            <input type="submit" name="profile" value="Go to Profile">
+        </form>
+        ';
+        echo '<form method="POST" action="./includes/logout.php">
+            <input type="submit" value="Log Out">
+        </form>';
+    }
+    ?>
+</main>

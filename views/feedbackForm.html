@@ -1,0 +1,33 @@
+<main id="feedbackForm">
+
+<h2>Feedback</h2>
+<p>Complete this to contact us with your questions</p>
+<form method="POST" action="index.php" id="fdbkForm">
+    <input type="hidden" name="task" value="fdbkSub">
+    <label for="email">Your email address:</label>
+    <input type="email" name="email">
+    <label for="subj">Subject:</label>
+    <select name="subj">
+        <option value="brand">Item Brands/Sub-Brands</option>
+        <option value="cat">Item Categories</option>
+        <option value="subcat">Item Sub-Categories</option>
+        <option value="stores">Stores</option>
+        <option value="account">Account Problems</option>
+        <option value="technical">Technical Issues</option>
+        <option value="other">Other Concern</option>
+    </select>
+    <label for="textInput">Message:</label>
+    <textarea name="textInput"></textarea>
+    <input type="reset" value="Reset Form">
+    <input type="submit" value="Submit Form">
+</form>
+</main>
+<script>
+    var theTime = new Date();
+    theTime = theTime.toLocaleString();
+    var timeInput = document.createElement('input');
+    timeInput.type = 'hidden';
+    timeInput.name = 'theTime';
+    timeInput.value = theTime;
+    document.getElementById('fdbkForm').appendChild(timeInput);
+</script>

@@ -1,0 +1,865 @@
+/*temp*/
+body.dark {
+    background-color: var(--bodyGrey);
+}
+
+body.dark a:not([role]) {
+    color: var(--mainClr);
+}
+
+body.dark a {
+    color: white;
+}
+
+body.dark a[role="button"], input[type="button"], input[type="submit"], input[type="reset"], main#updates button#moreResults {
+    background-color: #7e7e7b;
+}
+
+body.dark nav ul a {
+    color: black;
+}
+
+/*no custom att support*/
+
+body.noCustProp div#numberCheckModal div, body.noCustProp footer, body.noCustProp header, body.noCustProp main#search-page div#suggestions ul li:not(.groupHeader):hover, body.noCustProp main#subcat-view + div#shelfCompTool div, body.noCustProp main#updatePage + div#locationOpts li:nth-of-type(2n), body.noCustProp main#updatePage div#zipModal div#zipModalContent, body.noCustProp div#numberCheckMsg button, body.noCustProp main#subcat-view + div#shelfCompTool button#calcCompare, body.noCustProp main#subcat-view + div#shelfCompTool div.compHeadGrp div#compClose { background-color: rgb(27, 79, 121); }
+/*var(--blue)*/
+
+body.noCustProp.dark { background-color: rgba(155,155,155,.5); }
+/*var(--bodyGrey)*/
+
+body.noCustProp header div#burgerBtn div.burgerLn, body.noCustProp nav div#closeBtn div { background-color: rgb(200,200,200); }
+/*var(--hdFtClr)*/
+
+body.noCustProp footer, body.noCustProp header h1, body.noCustProp main#updatePage + div#locationOpts li:nth-of-type(2n) { color: rgb(200,200,200); }
+/*var(--hdFtClr)*/
+
+body.noCustProp main#settings li span.settingTitle, body.noCustProp h1, body.noCustProp main, body.noCustProp main a:not([role]), body.noCustProp.dark a:not([role]) { color: rgb(115,115,115); }
+/*var(----mainClr)*/
+
+body.noCustProp footer { height: 10vh; }
+/*var(--footerHt)*/
+
+body.noCustProp header { height: 10vh; }
+/*var(--headerHt)*/
+
+body.noCustProp main { min-height: 80vh; }
+/*var(--mainHt)*/
+
+:root {
+    --blue: rgb(27, 79, 121);
+    --bodyGrey: rgba(155,155,155,.5);
+    --headerHt: 10vh;
+    --mainHt: 80vh;
+    --footerHt: 10vh;
+    --hdFtClr: rgb(200,200,200);
+    --nearWhite: rgb(240,240,240);
+    --mainClr: rgb(115,115,115);
+}
+
+/*no vh support*/
+
+body.noVH main#feedbackForm form {
+    min-height: 600px;
+}
+
+/*no space-evenly support*/
+body.noSpEv header div#burgerBtn, body.noSpEv nav div#closeBtn, body.noSpEv main#feedbackForm form {
+    justify-content: space-around;
+}
+
+:root {
+    --headerHt: 100px;
+    --mainHt: 800px;
+    --footerHt: 100px;
+}
+
+/*custom attributes*/
+:root {
+    --blue: rgb(27, 79, 121);
+    --bodyGrey: rgba(155,155,155,.5);
+    --headerHt: 10vh;
+    --mainHt: 80vh;
+    --footerHt: 10vh;
+    --hdFtClr: rgb(200,200,200);
+    --nearWhite: rgb(240,240,240);
+    --mainClr: rgb(115,115,115);
+}
+
+/*base/mobile styles*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.hide {
+    display: none;
+}
+
+.hideOverflowY{
+    overflow-y: hidden;
+}
+
+.hideOverflowX{
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: var(--mainClr);
+}
+
+a[role="button"], input[type="button"], input[type="submit"], input[type="reset"], main#updatePage div#zipModal div#zipModalContent button, main#updates button#moreResults {
+    text-decoration: none;
+    display: block;
+    padding: 20px 0;
+    margin-top: 25px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 5px rgba(120,120,120,.75);
+    text-transform: uppercase;
+    text-align: center;    
+}
+
+a[role="button"], input[type="button"], input[type="submit"], input[type="reset"], main#updates button#moreResults {
+    color: white;   
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], main#updates button#moreResults {
+    width: 100%;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], main#updatePage div#zipModal div#zipModalContent button, main#updates button#moreResults {    
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input[type="email"], input[type="password"], input[type="text"], input[type="number"] {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 3px;
+}
+
+div.formSubErrors {
+    background-color: rgba(120,120,120,.25);
+    text-align: left;
+    padding: 5px;
+}
+
+div.formSubErrors li {
+    list-style-position: inside;
+    font-style: italic;
+}
+
+form {
+    text-align: left;
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+form.search {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+form.search select {
+    flex: 0 0 100%;
+    margin-bottom: .75em;
+}
+
+form label {
+    font-size: .75em;
+    font-style: italic;
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+/*removing number spinners*/
+/*cssstars.com/remove-spinners-number-input-field*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+li {
+    list-style-position: inside;
+}
+
+p.divider {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-style: italic; 
+}
+
+p.divider::before, p.divider::after {
+    content: " ------------------ ";
+}
+
+.italic {
+    font-style: italic;
+}
+
+body {
+    background-color: var(--bodyGrey);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+header {
+    height: var(--headerHt);
+    /*change color*/
+    background-color: var(--blue);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    padding: 10px 45px;
+    margin: 0 auto;
+    color: var(--hdFtClr);
+}
+
+header div#burgerBtn, nav div#closeBtn {
+    width: 40px;
+    height: 35px;
+    /*change color*/
+    background-color: gray;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border-radius: 3px;    
+    color: var(--hdFtClr);
+    font-size: 2.75em;
+}
+
+header div#burgerBtn {
+    margin-left: 5px;
+    position: absolute;
+}
+
+header div#burgerBtn div.burgerLn, nav div#closeBtn div  {
+    width: 30px;
+    height: 3px;
+    /*change color*/
+    background-color: var(--hdFtClr);
+    border-radius: 2px;
+}
+
+header div#burgerBtn.collapsed div.burgerLn, nav div#closeBtn div {
+    display: block;
+    position: static;
+}
+
+nav div#closeBtn div:nth-child(1){
+    transform: rotate(-45deg);
+    margin: 15px 5px;
+    position: absolute;
+}
+
+nav div#closeBtn div:nth-child(2){
+    transform: rotate(45deg);
+    margin: -18px 6px;
+    position: absolute;
+}
+
+/*needed?*/
+header div#burgerBtn.displayed div.burgerLn:nth-child(2){
+    display: none;
+}
+
+nav {
+    width: 60%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    min-width: 250px;
+    max-width: 400px;
+    display: flex;
+    padding: 10px;
+}
+
+nav.collapsed {    
+    right: 9999px;
+}
+
+nav.displayed {
+    left: 0;
+}
+
+nav + div, div#navModal {
+    width: 100%;
+    height: 1px;    
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    height: 1px;  
+    top:0;
+}
+
+nav + div.collapsed, div#navModal.collapsed {
+    right: 9999px;
+}
+
+nav + div.displayed, div#navModal.displayed {
+    z-index: 98;
+}
+
+nav.displayed ul:not(#profSubmenu) {
+    color: black;
+    list-style-type: none;
+    width: 93%;
+    margin: 0 auto;
+}
+
+nav.displayed ul li {
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+nav.displayed ul li span#subMenuCaret {
+    cursor: pointer;
+}
+
+nav.displayed ul li span#subMenuCaret.collapsed::after {
+    content: "▶";
+    padding-left: 5px;
+}
+nav.displayed ul li span#subMenuCaret.expanded::after {
+    content: "▼";
+    padding-left: 3px;
+}
+
+nav ul#profSubmenu {
+    padding-left: 5px;
+    display: none;
+}
+
+nav ul#profSubmenu.displayed {
+    display: block;
+}
+
+main {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 5px;
+    padding: 20px;
+    min-height: var(--mainHt);
+    margin: 0 auto;
+    color: var(--mainClr);
+    display: block;
+}
+
+main a:not([role]) {
+    color: var(--mainClr);
+}
+
+main#home {
+     display: flex;
+     flex-flow: column;
+     justify-content: center;
+}
+
+main#home img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+main#search-page {
+    position: relative;
+}
+
+main#search-page input#user-zip {
+    width: 6em;
+    display: inline-block;
+    text-align: center;
+    margin-right: 1em;
+}
+
+main#search-page span.hide {
+    display: none;
+}
+
+main#search-page div#suggestions {
+    max-height: 300px;
+    border: thin solid grey;
+    display: none;
+}
+
+main#search-page div#suggestions.active {    
+    overflow-y: scroll;
+    position: absolute;
+    width: 90%;
+    background-color: white;
+    display: block;
+}
+
+main#search-page div.orgCheck {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+
+main#search-page div.orgCheck label {
+    font-size: .9em;
+    margin-left: .5em;
+}
+
+main#search-page div#suggestions ul li:nth-child(odd):not(.groupHeader) {
+    background-color: rgb(210, 229, 245);
+}
+
+main#search-page div#suggestions ul li.groupHeader:hover {
+    cursor: default;
+}
+
+main#search-page div#suggestions ul li:not(.groupHeader):hover {
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+}
+
+main#search-page div#suggestions li {
+    list-style-type: none;
+    padding-left: 22.5px;
+}
+
+main#search-page div#suggestions li.groupHeader {
+    text-transform: uppercase;
+    padding-left: 10px;
+    color: white;
+    background-color: grey;
+}
+
+main#subcat-view p#matchCrumbs {
+    font-size: 1.25em;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+main#subcat-view h2 {
+    margin-top: 15px;
+}
+
+main#subcat-view table.detail-table {
+    border-spacing: 0;
+    margin-top: 15px;
+}
+
+main#subcat-view table.detail-table th, main#subcat-view table.detail-table td { 
+    border-top: thin solid black;
+    border-right: thin solid black;
+    padding: 3px;
+}
+
+main#subcat-view table.detail-table th:first-child, main#subcat-view table.detail-table td:first-child {
+    border-left: thin solid black;
+}
+
+main#subcat-view table.detail-table tr:last-child td { 
+    border-bottom: thin solid black;
+}
+
+main#subcat-view thead tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+
+main#subcat-view thead tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+main#subcat-view + div#shelfCompTool, div#numberCheckModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0px;
+    position: absolute;
+    background-color: rgba(150,150,150,.5);    
+}
+
+div#numberCheckModal {
+    height: 800px;
+}
+
+main#subcat-view + div#shelfCompTool.hide,  div#numberCheckModal.hide {
+    right: 9999px;
+}
+
+main#subcat-view + div#shelfCompTool.show,  div#numberCheckModal.show {
+    right: 0px;
+}
+
+main#subcat-view + div#shelfCompTool>div, div#numberCheckModal>div {
+    width: 200px;
+    min-height: 200px;
+    background-color: var(--blue);
+    border-radius: 5px;
+    min-width: 290px;
+    padding: 10px;
+    color:rgb(250,250,250);
+}
+
+main#subcat-view + div#shelfCompTool div.compHeadGrp {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main#subcat-view + div#shelfCompTool div.compHeadGrp div#compClose {
+    color: var(--blue);
+    background-color: rgb(250,250,250);
+    border-radius: 2px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+main#subcat-view + div#shelfCompTool div.compHeadGrp + p {
+    margin: 10px 0px;
+    padding-right: 2px;
+}
+
+main#subcat-view + div#shelfCompTool div form label {
+    width:33%;
+    display:inline-block;
+    padding:0;
+    text-align:center;    
+}
+
+main#subcat-view + div#shelfCompTool div form input, main#subcat-view + div#shelfCompTool div form select {
+    width:60%;
+    display:inline-block;
+    margin:5px 0;
+    height:22.5px;
+}
+
+main#subcat-view + div#shelfCompTool button#calcCompare, div#numberCheckMsg button {
+    margin:10px auto 0px auto;
+    text-align:center;
+    width:50%;
+    display:block;
+    cursor:pointer;
+    background-color:rgb(250,250,250);
+    border:none;
+    text-transform:uppercase;
+    color:var(--blue);
+    padding:5px 0;
+    border-radius:3px;
+}
+
+div#numberCheckMsg p {
+    text-align: center;
+    margin: .25em 0;
+}
+
+div#numberCheckMsg p.numDisplay {
+    font-style: italic;
+    font-size: 1.25em;
+} 
+
+main#subcat-view + div#shelfCompTool div#results {    
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+main#subcat-view + div#shelfCompTool div#results p#resUnitPrice {
+    text-align: center;
+}
+
+main#subcat-view + div#shelfCompTool div#results, main#subcat-view + div#shelfCompTool div#results div#genResult, main#subcat-view + div#shelfCompTool div#results div#brandResult  {
+    min-height: auto;
+    width: 92.5%;
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult, main#subcat-view + div#shelfCompTool div#results div#brandResult {
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+main#subcat-view + div#shelfCompTool div#results div.symbol{
+    background-color: transparent;
+    font-size: 3em;
+
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.excellent, main#subcat-view + div#shelfCompTool div#results div#brandResult.excellent {
+    background-color: darkgreen;
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.excellent div.symbol::before, main#subcat-view + div#shelfCompTool div#results div#brandResult.excellent div.symbol::before {
+    content:"★ ";
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.good, main#subcat-view + div#shelfCompTool div#results div#brandResult.good {
+    background-color: green;
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.good div.symbol::before, main#subcat-view + div#shelfCompTool div#results div#brandResult.good div.symbol::before {
+    content: "✓ ";
+} 
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.high, main#subcat-view + div#shelfCompTool div#results div#brandResult.high {
+    background-color: goldenrod;
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.high div.symbol::before, main#subcat-view + div#shelfCompTool div#results div#brandResult.high div.symbol::before {
+    content:"! "
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.veryhigh, main#subcat-view + div#shelfCompTool div#results div#brandResult.veryhigh {
+    background-color: maroon;
+}
+
+main#subcat-view + div#shelfCompTool div#results div#genResult.veryhigh div.symbol::before, main#subcat-view + div#shelfCompTool div#results div#brandResult.veryhigh div.symbol::before {
+    content: "✕ ";
+}
+
+main#updates table {
+    border-collapse: collapse;
+}
+
+main#updates td {
+    border: thin solid black;
+    padding: 2.5px;
+}
+
+main#updates div.tableContainer.nonEmpty {
+    height: 425px;
+    width: 100%;
+    overflow: scroll;
+    border: thin solid darkgray;
+}
+
+main#updates button#moreResults, main#updates input[type="submit"] {
+    width: 100%;
+    max-width: 360px;
+    margin: 10px auto;
+}
+
+main#updates div.tableContainer.empty {
+    border: none;
+    overflow: hidden;
+    height: auto;
+} 
+
+main#favorites div#faveLinks ul {
+    list-style-type: square;
+    margin-left:3px;
+}
+
+main#favorites div#faveLinks ul li {
+    margin-bottom: .35em;
+}
+
+main#favorites div#faveLinks h3 {
+    border-bottom:thin solid var(--mainClr);
+    margin-top:1em;
+    background-color:rgba(255,255,255,.25);
+    border-top-left-radius:3px;
+    border-top-right-radius:3px;
+    padding-left:2px;
+}
+
+main#settings li {
+    flex-flow: column wrap;
+    margin-top: 1.25em;
+    display: flex;
+    justify-content: space-between;
+}
+
+main#settings li span.settingTitle {
+    border-bottom: thin solid var(--mainClr);
+    font-weight: bold;
+}
+
+main#settings li span:nth-child(2) {
+    margin-top: 5px;
+    padding: 3px 0px;
+}
+
+main#settings li input {
+    margin-top: 5px;
+}
+
+main#settings li a {
+    margin-right: 5px;
+}
+
+main#updatePage select, main#updatePage input, main#updatePage textarea, main#feedbackForm textarea {
+	width: 100%;
+	font-family: Tahoma, "Arial Narrow", Arial, sans-serif;
+	font-size: .9em;
+}
+
+main#updatePage input:not([type="submit"]), main#updatePage textarea, main#feedbackForm textarea {
+	padding: .25em;
+}
+
+main#updatePage textarea.twoLine {
+    height: 3em;
+}
+main#updatePage textarea.threeLine {
+    height: 4.25em;
+}
+
+main#updatePage textarea.multiLine {
+    height: 5.5em;
+}
+
+main#updatePage form#updateForm p:nth-child(2n), main#updatePage form#updateForm input:not([type="submit"]), main#updatePage form#updateForm select, main#updatePage form#updateForm textarea {
+    margin-top:3px;
+}
+
+main#updatePage form#updateForm p:nth-child(2n), main#updatePage form#updateForm input:not([type="submit"]), main#updatePage form#updateForm select {
+    height: 25px;
+}
+
+main#updatePage form#updateForm p:nth-child(2n+1), main#updatePage form#updateForm label {
+    margin-top: 9px;
+    display: block;
+    font-weight: bold;
+}
+
+main#updatePage form#updateForm label {
+    font-style: normal;
+}
+
+main#updatePage + div#locationOpts {
+    max-height: 230px;
+    background-color: white;
+    position: absolute;    
+}
+
+main#updatePage + div#locationOpts.hide {
+    right: 9999px;
+    top: 0px;
+    display: none;
+}
+
+main#updatePage + div#locationOpts {
+    height: 180px;
+    position: absolute; 
+    background-color: rgba(255,255,255,.85);
+    display: flex;
+    flex-flow: column-reverse;
+    width: 260px;
+}
+
+main#updatePage + div#locationOpts ul {
+    display: block;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+main#updatePage + div#locationOpts li {
+    list-style-type: none;
+    padding: .35em;
+    padding-right: 0em;
+}
+
+main#updatePage + div#locationOpts li:nth-of-type(2n) {
+    background-color: var(--blue);
+    color: var(--hdFtClr);
+}
+
+main#updatePage + div#locationOpts div#googleAttr {
+    border-top: thin solid darkgray;
+}
+
+main#updatePage + div#locationOpts div#googleAttr img {
+    display: block;
+    margin: .35em;
+    margin-right: 0em;
+}
+
+main#updatePage div#zipModal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(80,80,80,.75);
+}
+
+main#updatePage div#zipModal.hide {
+    display: none;
+    z-index: -1;
+}
+
+main#updatePage div#zipModal.show {
+    display: flex;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+main#updatePage div#zipModal div#zipModalContent {
+    width: 45%;
+    border: thick solid white;
+    background-color: var(--blue);
+    color: white;
+    padding: 1em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+main#updatePage div#zipModal div#zipModalContent p {
+    flex: 0 0 100%;
+}
+
+main#updatePage div#zipModal div#zipModalContent button {
+    flex: 0 0 45%;
+}
+
+main#updatePage div#zipModal div#zipModalContent input {
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+    margin-left: .25em;
+}
+
+main#feedbackForm form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    min-height: 60vh;
+}
+
+footer {
+    width: 100%;
+    background-color: var(--blue);
+    text-align: center;
+    color: var(--hdFtClr);
+    height: var(--headerHt);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}

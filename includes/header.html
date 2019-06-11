@@ -1,0 +1,52 @@
+<?php session_start();
+if(!isset($_SESSION['userID'])){
+    $navLinks = '
+    <li><a href="?page=signin">Sign In</a></li>
+    <li><a href="?page=register">Register</a></li>';
+} else {
+    $navLinks = '
+    <li><a href="#" id="profLink">Profile</a><span id="subMenuCaret" class="collapsed"></span></li>
+    <ul id="profSubmenu">
+        <li><a href="?page=settings">Settings</a></li>
+        <li><a href="?page=favorites">My Favorites</a></li>
+        <li><a href="?page=updates">My Updates</a></li>
+    </ul>
+    <li><a href="#" id="logOutLink">Log Out</a></li>';    
+}
+$navLinks = $navLinks.'<li><a href="?page=feedback">Contact</a></li>';
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Grocery App</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/theStyles.css">
+        <script src="./assets/googleMapsStuff.js"></script>
+    </head>
+    <body class="dark noCustProp noVH noSpEv">
+        <header>
+            <div id="burgerBtn" class="collapsed">
+                <div class="burgerLn"></div>
+                <div class="burgerLn"></div>
+                <div class="burgerLn"></div>
+            </div>
+            <h1>The Grocery App <span></span></h1>
+        </header>
+        <nav class="collapsed">
+            <ul>
+                <li><a href="?page=home">Home</a></li>
+                <li><a href="?page=search">Search for Items</a></li>
+                <?php echo $navLinks; ?>
+            </ul>
+            <div id="closeBtn" class="collapsed">
+                    &times;
+                </div>
+            <form method="POST" action="index.php" id="profForm">
+                <input type="hidden" name="task" value="profile">
+            </form>
+            <form method="POST" action="./includes/logout.php" id="logoutForm">
+                
+            </form>
+        </nav>
+        <div id="navModal" class="collapsed"></div>

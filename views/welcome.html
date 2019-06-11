@@ -1,0 +1,10 @@
+<main>    
+    <h2>Welcome!</h2>    
+    <p>You've signed in with the email address <?php echo $email; ?>.</p>
+    <p>User ID: <?php echo $_SESSION['userID']; ?></p>
+    <p>User ZIP: <?php echo $_SESSION['userZip']; ?></p>
+    <form method="POST" action="index.php">
+        <input type="hidden" name="task" value="profile">
+        <input type="submit" name="profile" value="Go to Profile">
+    </form>
+</main>

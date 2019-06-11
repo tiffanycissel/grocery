@@ -1,0 +1,121 @@
+<?php
+if(isset($_SESSION['tempUpdateVals'])){
+    $subCat = $_SESSION['tempUpdateVals']['subCat'];
+    $subCatName = $_SESSION['tempUpdateVals']['subCatName'];
+    $unit = $_SESSION['tempUpdateVals']['unit'];
+    $catName = $_SESSION['tempUpdateVals']['catName'];
+    $catID = $_SESSION['tempUpdateVals']['catID'];
+    $organic = $_SESSION['tempUpdateVals']['organic'];
+    $type = $_SESSION['tempUpdateVals']['type'];
+    if(isset($_SESSION['tempUpdateVals']['brandID'])){
+        $brandID = $_SESSION['tempUpdateVals']['brandID'];
+    }
+    if(isset($_SESSION['tempUpdateVals']['subbrandID'])){
+        $subbrandID = $_SESSION['tempUpdateVals']['subbrandID'];
+    }
+    unset($_SESSION['holdUpdateVals']);
+    unset($_SESSION['tempUpdateVals']);
+} else {
+    $subCat = $_POST['subCat'];
+    $subCatName = $_POST['subCatName'];
+    $unit = $_POST['unit'];
+    $catName = $_POST['catName'];
+    $catID = $_POST['catID'];
+    $organic = $_POST['organic'];
+    $type = $_POST['updateType'];
+    if($type==='branded'){
+        $brandID = $_POST['brandID'];
+        if(isset($_POST['subbrandID'])){
+            $subbrandID = $_POST['subbrandID'];
+        }
+    }
+}
+?>
+<?php $coords = allZips($_SESSION['userZip']); ?>
+<main id="updatePage" data-current-zip="<?php echo $_SESSION['userZip'] ?>" data-current-zip-lat="" data-current-zip-lon="" data-update-type="<?php echo $type.'"';?> data-category-id="<?php echo $catID.'"';  if($type==='branded'){echo 'data-brand-id="'.$brandID.'"';} if(isset($subbrandID)){echo 'data-subbrand-id="'.$subbrandID.'"';} ?>>
+    
+    <h2>Update Item</h2>
+    
+    <form method="post" action="index.php" id="updateForm">
+        <input type="hidden" name="task" value="submitUpdate">
+        <input type="hidden" name="unit" value="<?php echo $unit; ?>">        
+            <p id="category" data-cat-id="<?php echo $catID; ?>">Category</p>
+            <p><?php echo $catName; ?></p>                
+                
+            <p>Subcategory</p>
+            <p><?php echo $subCatName; ?><input type="hidden" name="subCat" value="<?php echo $subCat; ?>"></p>               
+                
+            <label for="brand">Brand</label>            
+            <select name="brand" id="brandSelect" required>
+                <option></option>
+                <optgroup label="Top Brands">
+                    <?php 
+                    $topBrands = brandQuery($catID,$subCat,$conn,'c');
+                    foreach($topBrands as $key=>$value){
+                        echo '<option value='.$key.'>'.$value.'</option>';
+                    }
+                    ?>
+                </optgroup>
+                <optgroup label="Related Brands">
+                        <?php 
+                        $othrBrands = brandQuery($catID,$subCat,$conn,'r',$topBrands);
+                        foreach($othrBrands as $key=>$value){
+                            echo '<option value='.$key.'>'.$value.'</option>';
+                        }
+                        ?>
+                    </optgroup>
+            </select>
+                
+            <label for="subbrand">SubBrand</label>            
+            <select name="subbrand" id="subbrandSelect" disabled>
+                <option value=""></option>
+            </select>    
+
+            <label for="size">Qty/Sz (<?php echo $unit; ?>)</label>
+            <input type="number" name="size" step=".01" required>       
+
+            <label for="organic">Organic</label>
+            <select name="organic" id="organic" data-organic-default="<?php echo $organic; ?>" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="price">Price</label>
+            <input type="number" name="price" step=".01" required>
+
+            <label for="storeName">Store</label>
+            <select name="storeName" id="storeName" required>
+                <option></option>
+                <?php $stores = getStores();
+                foreach($stores as $key=>$value){
+                    echo '<option value="'.$key.'">'.$value.'</option>';
+                }
+                ?>
+            </select>
+
+            <label for="storeLocation">Store Location</label>
+            <textarea id="storeLocation" rows="1" disabled required name="storeLocation"></textarea>
+        <input type="submit" value="Submit">
+        <input type="hidden" name="storeZip" id="storeZip">
+    </form>
+    <div id="zipModal" class="hide">
+        <div id="zipModalContent">
+            <p>Current zip: <span id="curZipSpan"><?php echo $_SESSION['userZip']; ?></span></p>
+            <p>New zip: <input type="number" min="501" max="99929" id="modalZip"></p>
+            <button id="modalSaveBtn">Save</button>
+            <button id="modalCancelBtn">Cancel</button>
+        </div>
+    </div>
+</main>
+<div id="locationOpts" class="hide">
+        <ul></ul>
+        <div id="googleAttr">
+            <img src="./assets/powered_by_google_on_white.png" alt="Powered by Google">
+        </div>
+    </div>
+<div id="map"></div>
+<div id="numberCheckModal" class="hide">
+    <div id="numberCheckMsg">
+        info
+    </div>
+</div>
