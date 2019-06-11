@@ -104,7 +104,8 @@ if(isset($_GET['task']) && $_GET['task']=='updatesTotal'){
 }
 
 if(isset($_GET['task']) && $_GET['task']=='getAPI'){
-    $apiInfo = 'AIzaSyBWY7eY9OnVIqC0kwcmFkXXuaXhOPIBtBY';
+    //api key removed for security
+    $apiInfo = '';
     echo $apiInfo;
 }
 
