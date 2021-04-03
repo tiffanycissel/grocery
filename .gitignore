@@ -1,4 +1,5 @@
-*.zip
 assets/dbconn.php
 assets/googleMapsStuff.js
 error_log
+*.zip
+*.tar.gz
