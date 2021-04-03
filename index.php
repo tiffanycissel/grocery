@@ -64,8 +64,8 @@ if($_SERVER['REQUEST_METHOD']!=='POST'){
     } else if ($_POST['task']==='resetPW'){
         //function or include that carries out DB action and then includes email submission
         include('includes/resetRequest.php');
-    } else if ($_POST['task']==='fdbkSub'){
-        include('includes/feedbackSub.php');
+    // } else if ($_POST['task']==='fdbkSub'){
+    //     include('includes/feedbackSub.php');
     } else if ($_POST['task']==='resetSub'){
         include('includes/resetSub.php');
     }
